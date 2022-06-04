@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+</head>
+
+<body>
+    <label for="idTemperatura">Temperatura desejada</label><br>
+    <input type="number" id="idTemperatura" name="nmTemperatura"><!-- um input para o numero de entrada-->
+    <br><br>
+
+    <label for="idResul">Resultado:</label><br>
+    <input type="text" id="idResul" name="nmResul"><br><br><!-- um output para o numero que vai ser convertido-->
+
+    <!--Coloquei uma box para cada opção das converção para converter o número de entrada -->
+    <button type="button" value="Converterctf" onclick="converterCelToFah()">Celcius para Fahrenheit: </button>
+    <br>
+    <button type="button" value="Converterctk" onclick="converterCelToKel()">Celcius para Kelvin: </button>
+    <br>
+    <button type="button" value="Converterftc" onclick="converterFahToCel()">Fahrenheit para Celcius: </button>
+    <br>
+    <button type="button" value="Converterftk" onclick="converterFahToKel()">Fahrenheit para Kelvin: </button>
+    <br>
+    <button type="button" value="Converterktc" onclick="converterKelToCel()">Kelvin para Celcius: </button>
+    <br>
+    <button type="button" value="Converterktf" onclick="converterKelToFah()">Kelvin para Fahrenheit: </button>
+    <br>
+
+        <script>
+
+                function converterCelToFah() {//
+                    
+                let celcius = Number(document.getElementById("idTemperatura").value) 
+                let fahrenheit = Number(document.getElementById("idTemperatura").value)
+                fahrenheit = celcius * 1.8 + 32;// formula de converção
+                document.getElementById("idResul").value = fahrenheit.toFixed(2) + " F°" 
+                // mostra o resultado da converção na box do idResul
+                // foi colocado um limite de numeros depois da virgula para apresentar melhor
+                }
+
+                function converterCelToKel() {
+                let celcius = Number(document.getElementById("idTemperatura").value)
+                let kelvin = Number(document.getElementById("idTemperatura").value)
+                kelvin = celcius + 273.15;// formula de converção
+                document.getElementById("idResul").value = kelvin.toFixed(2) + " K°"// mostra o resultado da converção na box do idResul
+                }
+
+                function converterFahToCel() {
+                let fahrenheit = Number(document.getElementById("idTemperatura").value)
+                let celcius = Number(document.getElementById("idTemperatura").value)
+                celcius = (fahrenheit - 32) / (9/5);// formula de converção
+                document.getElementById("idResul").value = celcius.toFixed(2) + " C°"// mostra o resultado da converção na box do idResul
+                }
+
+                function converterFahToKel() {
+                let fahrenheit = Number(document.getElementById("idTemperatura").value)
+                let kelvin = Number(document.getElementById("idTemperatura").value)  
+                kelvin = (fahrenheit - 32) * (9/5) + 273.15; // formula de converção
+                //essa formula ele vai dar uma difereça pequena pois a formula original contém fração e numero quebrado
+                document.getElementById("idResul").value = kelvin.toFixed(2) + " K°"// mostra o resultado da converção na box do idResul
+                }
+
+                function converterKelToCel() {
+                let kelvin = Number(document.getElementById("idTemperatura").value)
+                let celcius = Number(document.getElementById("idTemperatura").value)
+                celcius = kelvin - 273.15;// formula de converção
+                document.getElementById("idResul").value = celcius.toFixed(2) + " C°"// mostra o resultado da converção na box do idResul
+                }
+
+                function converterKelToFah() {
+                let kelvin = Number(document.getElementById("idTemperatura").value)
+                let fahrenheit = Number(document.getElementById("idTemperatura").value)
+                fahrenheit = (kelvin - 273) * 9/5 + 32;// formula de converção
+                document.getElementById("idResul").value = fahrenheit.toFixed(2) + " F°" // mostra o resultado da converção na box do idResul
+                }
+
+        </script>
+</body>
+
+</html>

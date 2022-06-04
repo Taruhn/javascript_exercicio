@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+
+<body>
+
+    <body>
+        <label for="idNumero">Coloque o valor</label><br>
+        <input type="number" id="idCelcius" name="nmCelcius">
+        <br><br>
+
+        <label for="idResul">Resultado:</label><br>
+        <input type="text" id="idResul" name="nmResul"><br><br>
+        <output id="idOut">a conversão fica: </label> <br>
+            
+        <button type="button" value="Converterctf" onclick="conversorMoedas()">Converter </button>
+         <br>
+
+        <!-- br para us = 0,21
+             br para euro = 0,20
+             br para libra = 0,17
+             br para dolar canadense = 0,27
+             dólar para real = 4,75
+             dólar para euro = 0,93
+             dólar para libra = 0,79
+             dólar para dolar canadense = 1,27
+             euro para real = 5,12
+             euro para dólar = 1,08
+             euro para libra = 0,85
+             euro para dolar canasdense = 1,37
+             libra para real = 6,01
+             libra para dólar = 1,27
+             libra para euro =  1,17
+             libra para dolar canadense = 1,60
+             dolar canadense para real = 3,75
+             dolar canadense para dólar = 0,79
+             dolar canadense para euro =  0,73
+             dolar canadense para libra = 0,62  
+            sequencia de radio button     -->
+
+        <script>
+            var dolarCanadense = Number(document.getElementById("idDolarCanada").value)
+            var dolarAmericano = Number(document.getElementById("idDolarUS").value)
+            var real = Number (document.getElementById("idReal").value)
+            var euro = Number (document.getElementById("idEuro").value)
+            var libra = Number (document.getElementById("idLibra").value)
+            var moedaAux = Number (document.getElementById("idMoeda").value)
+            
+            function conversorMoedas() { }
+                  if ( ) {
+                console.log("* Opcao real para dólar selecionada");
+                dolarAmericano = moedaAux * 0.21
+                document.getElementById("idOut").value = dolarAmericano.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao real para euro selecionada");
+                euro = moedaAux * 0.20
+                document.getElementById("idOut").value = euro.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao real para libra selecionada");
+                libra = moedaAux * 0.17
+                document.getElementById("idOut").value = libra.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao real para dolar canadense selecionada");
+                dolarCanadense = moedaAux * 0.27
+                document.getElementById("idOut").value = dolarCanadense.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao dólar para real selecionada");
+                real = moedaAux * 4.75
+                document.getElementById("idOut").value = real.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao dólar para euro selecionada");
+                euro = moedaAux * 0,93
+                document.getElementById("idOut").value = euro.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao dólar para libra selecionada");
+                libra = moedaAux * 0.79
+                document.getElementById("idOut").value = libra.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao dólar para dolar canadense selecionada");
+                dolarCanadense = moedaAux * 1.27
+                document.getElementById("idOut").value = dolarCanadense.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao euro para real selecionada");
+                dolarAmericano = moedaAux * 5.12
+                document.getElementById("idOut").value = dolarAmericano.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao euro para dólar selecionada");
+                real = moedaAux * 1.08
+                document.getElementById("idOut").value = real.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao euro para libra selecionada");
+                dolarAmericano = moedaAux * 0.85
+                document.getElementById("idOut").value = dolarAmericano.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao euro para dolar canasdense selecionada");
+                libra = moedaAux * 1.37
+                document.getElementById("idOut").value = libra.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao libra para real selecionada");
+                dolarCanadense = moedaAux * 6.01
+                document.getElementById("idOut").value = dolarCanadense.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao libra para dólar selecionada");
+                real = moedaAux * 1.27
+                document.getElementById("idOut").value = real.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao libra para euro selecionada");
+                dolarAmericano = moedaAux * 1.17
+                document.getElementById("idOut").value = dolarAmericano.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao libra para dolar canadense selecionada");
+                euro = moedaAux * 1.60
+                document.getElementById("idOut").value = euro.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao dolar canadense para real selecionada");
+                real = moedaAux * 3.75
+                document.getElementById("idOut").value = real.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao dolar canadense para dólar selecionada");
+                dolarAmericano = moedaAux * 0.79
+                document.getElementById("idOut").value = dolarAmericano.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao dolar canadense para euro selecionada");
+                euro = moedaAux * 0.73
+                document.getElementById("idOut").value = euro.toFixed(2) + " $"
+           
+            } else if () {
+                console.log("* Opcao dolar canadense para libra = 0,62 selecionada");
+                libra = moedaAux * 0.62
+                document.getElementById("idOut").value = libra.toFixed(2) + " $"
+           
+            } else {
+                console.log("* Operacao inválida");
+            }
+
+
+        </script>
+
+    </body>
+
+</html>

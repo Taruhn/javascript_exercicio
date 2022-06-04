@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="">
+            <label for="idPeso">Peso</label><br>
+            <input type="number" name="nmPeso" id="idPeso" step="0.01">
+            <br><br>
+            <label for="idAltura">Altura</label><br>
+            <input type="number" name="nmAltura" id="idAltura" step="0.01">
+            <br><br>
+            <output id="idOut">IMC:</output> 
+            <p id="idPar"></p>
+            <br><br>
+            <input type="button" value="Calcular" onclick="calcular()">
+        </form>
+
+        <script>
+
+            function calcular(){
+                var peso = Number(document.getElementById("idPeso").value)
+                var altura = Number(document.getElementById("idAltura").value)
+                var imc = (peso/(altura * altura)).toFixed(2)
+              
+                var mensagem
+                /*
+                if (imc <= 16.9) {
+                    mensagem = "Muito abaixo do peso"
+                }else{
+                    if ((imc > 16.9) && (imc <= 18.4)) {
+                        mensagem = "Abaixo do peso"
+                    } else {
+                        if ((imc > 18.4) && (imc <= 24.9)) {
+                            mensagem = "Peso normal"
+                        } else {
+                            if ((imc > 24.9) && (imc <= 29.9)) {
+                                mensagem = "Acima do peso"
+                            } else {
+                                if ((imc > 29.9) && (imc <= 34.9)) {
+                                    mensagem = "Obesidade grau I "
+                                } else {
+                                    if ((imc > 34.9) && (imc <= 40)) {
+                                        mensagem = "Obesidade grau II "
+                                    } else {
+                                        mensagem = "Obesidade grau III "
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                */
+
+                
+                if (imc <= 16.9) {
+                    mensagem = "Muito abaixo do peso"
+                }
+                
+                if ((imc > 16.9) && (imc <= 18.4)) {
+                    mensagem = "Abaixo do peso"
+                }
+
+                if ((imc > 18.4) && (imc <= 24.9)) {
+                    mensagem = "Peso normal"
+                }
+
+                if ((imc > 24.9) && (imc <= 29.9)) {
+                    mensagem = "Acima do peso"
+                }
+
+                if ((imc > 29.9) && (imc <= 34.9)) {
+                    mensagem = "Obesidade grau I "
+                }
+
+                if ((imc > 34.9) && (imc <= 40)) {
+                    mensagem = "Obesidade grau II  "
+                }
+
+                if (imc > 40) {
+                    mensagem = "Obesidade grau III"
+                }
+                
+                document.getElementById("idOut").value = "IMC: " + imc + " - " + mensagem
+                document.getElementById("idPar").innerText = "IMC: " + imc
+            }
+        </script>
+    </body>
+</html>

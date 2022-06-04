@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="number" id="idNum" placeholder="Número"><br>
+        <input type="button" value="incluir" onclick="incluir()"><br>
+        <input type="button" value="Relatorio" onclick="relatorio()">
+        <br><br>
+        <output id="idOutVetor"></output>
+        <output id="idOutItens"></output>
+    </form>
+
+    <script>
+
+        var numeros = []
+        var outvetor = document.getElementById("idOutVetor")
+        var outItens = document.getElementById("idOutItens")
+        outvetor.value = "Números digirados: "
+        outItens.value = "Posições com multiplos de 10: "
+
+        function incluir() {
+            numeros.push(Number(document.getElementById("idNum").value))
+            document.getElementById("idNum").value = ""
+
+        }
+        function relatorio() {
+            for (let index = 0; index < numeros.length; index++) {
+                outvetor.value = outvetor.value + numeros[index] + ";";
+
+                if (numeros[index] % 10 == 0) {
+                    outItens.value = outItens.value + index + " "
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

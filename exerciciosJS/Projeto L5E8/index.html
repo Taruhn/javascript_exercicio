@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08</title>
+</head>
+
+<body>
+    <label for="idCelcius">Temperatura em Celcius: </label><br>
+    <input type="number" id="idCelcius" name="nmCelcius" step="0.01">
+    <br><br>
+    <output id="idOut">Resultado em Fahrenheit: </label><br>
+    <br>
+        <input type="button" value="Converter" onclick="converterFah()"></button>
+
+
+        <script>
+
+            function converterFah() {
+                let celcius = Number(document.getElementById("idCelcius").value)
+                let fahrenheit = celcius * 1.8 + 32;
+                // A formula de conversão do exercico está errada
+                document.getElementById("idOut").value = "A temperatura em Fahrenheit é: " + fahrenheit.toFixed(2) + " F°" // mostra o resultado da converção na box do idOut
+            }
+
+        </script>
+</body>
+
+</html>
