@@ -12,14 +12,6 @@ para colocar um número para ser adivinhado, depois tem um botão para gerar o r
 não, ao clicar vai dar um retorno se é para tentar novamente ou que acertou o número adivinhado, caso tenha tenha mais tentativas, ele da um retorno se o numero colocado é menor ou maior
 que ele sorteou e se acabou as tentativas ele retorna que acabou o jogo e não acertou dentre as 3 alternativas.
 
- O código: Dentro do script tem uma variável "numeroSorteado"
-que faz que ele um número seja sorteado de 1 até 10, em seguida tem um if para colocar o número sorteado que se o número
-a tela for carregada, em seguida uma variável "tentativa", usada para as vezes que for colocada para jogar contra a máquina, depois tem uma variável  "msnSaida" que serve para dar
-retorno no resultado da escolha de um número para a adivinhar se está correto ou não. Em seguida possui um função "enviar" para executar o button "enviar" na interface do programa,
-dentro dele tem um "val" uma variável que fica no escopo dentro do "enviar" ela tem o nomeclatura de "numeroApostado" e se ela saia um número e que ela puxa o número do imput do número 
-
-quando clica em "enviar" para adivinhar o número sorteado, no console ele mostra qual o número que foi gerado e com ele, e da o retorno na interface se esse qu
-
  v0.0 = Ela apresenta um bug que quando faz o input de tentativas, ela da um erro de ter uma chance adicional no sorteamento de um número aleatório mesmo que o jogador tenha acertado nas 3 chances, 
 o que causa esse bug é na 81 e 83, pois a posição da primeira tentativa está posição zero '0' e ela é considerada como a primeira tentativa, e o número 3 seria a quarta posição desta array, 
 a solução é mudar a linha 83 para "if (tentativa <=3) {", com isso ele resolve a quantidade de tentativas, se for voltado só a essa versão (index v.0).
@@ -52,8 +44,16 @@ caso ocorra isso, ele vai dar um retorno de falso, caso aconteça isso ele vai r
 vai continuar dando essa resposta. Se no caso for colocado um número desejado, ele vai retornar como verdadeiro e esse número é considerar como uma entrada valida ou "validarEntradas",
 como ele foi validado ele é considerado uma aposta valida ou "isApostaValida", com isso ele pode percorrer o "if (isApostaValida)" para fazer o jogo de adivinhação com o número que foi colocado.
 
- v5.0 = Nessa versão houve modificações na parte do código para ele ficar mais "limpo" e também que possa ter clareza ao ler ele e de que caso ocorra alguma manutenção no código, ele fica mais fácil de achar o erro e de
-modificar para colocar as correções. 
+ v5.0 = Nessa versão houve modificações na parte do código para ele ficar mais "limpo" e também que possa ter clareza ao ler ele e de que caso ocorra alguma manutenção no código, ele fica mais fácil de
+ achar o erro e de modificar para colocar as correções, começando com as variáveis, pois ao longo das versões anteriores teve inumeras adições no código que ela ficavam perto da função que iria ser usada, com este ajuste foi necessário que existisse, uma nova function para organizar e também para que os passos do código executasse em cada um dos seu
+escopo, sendo essa a function "inicializar()", que agora ela pode fazer com tenha uma rotina em opnde ela deve começar, dentro dela ficou o if de "numeroSorteado" com isso fica mais claro com o código quer fazer introdutoriamante.
+
+ v6.0 = Nessa versão teve uma modificação no function "enviar()", que fez com que tivesse a uma nova function chamada "testarJogada(numeroApostado)", o motivo dessa alteração é o objetivo que o 
+código tenha separado em parte e em cada um em seu escopo em cada rotina que o código faz. Nesse caso o "enviar" ficou encarregado de fazer com que o código tivesse uma operação para inicializar
+ o jogo de adivinhação, e quando é executada a ação da jogada, ele envia para as respectivas funtions dependendo o que o jogador faz, se executa uma ação que o código espere que faça, ele vai para 
+ a nova funcion, a "testarJogada(numeroApostado)", onde ela verifica em se a tentativa foi maior, menor, que foi acertada e ganhou o jogo, e se for a terceira tentativa e errar ele da fim de jogo.
+ Caso o jogado de uma entrada de um número errado, ele vai ser levado para a function "validarEntradas(numeroApostado)", (explicação dessa funcion está na v4.0 desse readme). Por fim, foi adicionado  uma nova funcion, a function inicializarJogo(), que faz com que o usuário possa fazer um "Iniciar" para começar o jogo e tentar adivinhar o número em que ele apostou, quando acaba o jogo, não importando
+ se ganhou ou perdeu, vai ser recomeçado para uma nova roda, os campos da tela ficam desativados até que tenha uma nova inicialização do jogo.
 
 
 
